@@ -1,0 +1,50 @@
+<h2>users works!</h2>
+<p *ngIf="isValidFormSubmitted" class="succes">
+    Form Submitted SuccessFully
+
+</p>
+<form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>
+                <input formControlName="userName">
+            </td>
+        </tr>
+        <tr>
+            <td>age:</td>
+            <td>
+                <input formControlName="age" type="number">
+            </td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td>
+                <input type="radio" value="male" formControlName="gender">Male
+                <input type="radio" value="female" formControlName="gender">female
+            </td>
+        </tr>
+        <tr>
+            <td>Aru You Married:</td>
+            <td>
+                <input type="checkbox" formControlName="isMarried">
+            </td>
+        </tr>
+        <tr>
+            <td>Accept T & C :</td>
+            <td>
+                <input  type="checkbox" formControlName="tc">
+            </td>
+        </tr>
+        <tr>
+            
+            <td colspan="2">
+                <button>submit</button>
+                <button type="button" (click)="setUserValues()">setUserValues</button>
+                <button type="button" (click)="setPatchValues()">setPatchValues</button>
+             
+            </td>
+        </tr>
+    </table>
+
+</form>
