@@ -1,0 +1,17 @@
+<form [formGroup]="studentForm" (ngSubmit)="onFormSubmit()">
+    <div>
+        Name:<input formControlName="name"/>
+        <label *ngIf="name.hasError('required')"> Enter Name. </label>
+
+    </div>
+    Classmates
+    <div formArrayName="classmates">
+        <div *ngFor="let cm of classmates.controls; index as i ">
+            <input [formControlName]="i">
+
+        </div>
+
+    </div>
+    <button>submit</button>
+
+</form>

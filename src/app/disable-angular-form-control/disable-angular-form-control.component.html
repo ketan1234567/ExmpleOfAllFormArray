@@ -1,0 +1,55 @@
+<h1>disable-angular-form-control works!</h1>
+
+        <input [formControl]="cityName">
+        <button (click)="cityNameDisable()">Disable</button>
+        <button (click)="cityNameEnable()">Enable</button>
+    <h3>User Form </h3>
+   <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <input formControlName="name">
+                </td>
+
+            </tr>
+            <tr>
+                <td>age:</td>
+                <td>
+                    <input formControlName="age" [attr.enableDisable]="ageAction">
+                    <button (click)="ageAction='disable'">Disable</button>
+                    <button (click)="ageAction='enable'">Enable</button>
+                </td>
+            
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button>Submit</button>
+                </td>
+            </tr>
+        </table>
+ </form> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+

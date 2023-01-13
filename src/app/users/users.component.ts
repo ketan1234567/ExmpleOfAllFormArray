@@ -39,8 +39,8 @@ setUserValues(){
       age:20,
       gender:'male',
       isMarried:true,
-      tc:true,
-      xyz:'anil'
+      tc:true
+  
 
     });
 
