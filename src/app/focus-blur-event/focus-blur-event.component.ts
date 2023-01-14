@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl,FormBuilder, Validators } from '@angular/forms';
-
-
 @Component({
   selector: 'app-focus-blur-event',
   templateUrl: './focus-blur-event.component.html',
   styleUrls: ['./focus-blur-event.component.css']
-})
+});
 export class FocusBlurEventComponent implements OnInit  {
-  userForm: any;
+  userForm: any
+  myStyle1:any
+  myStyle2:any
+  myStyle3:any
   constructor(private formBuilder:FormBuilder) {
   }
   ngOnInit(){
@@ -18,10 +19,9 @@ export class FocusBlurEventComponent implements OnInit  {
     });
    
   }
-  myStyle1:any
-  myStyle2=null
-  myStyle3=null
+
   countryName= new  FormControl();
+  name= new  FormControl();
   onFocusCountry() {
     this.myStyle1={
       'background-color' : "#d1152c"
@@ -33,17 +33,19 @@ export class FocusBlurEventComponent implements OnInit  {
     }
   }
   onBlurName(){
-    this.myStyle2=null;
+    this.myStyle2;
   }
-  onFocusAge(){
+ /* onFocusAge(){
     this.myStyle3={
       'background-color':"#eebd71"
     }
-    onBlurAge(){
-      this.myStyle3=null;
-    }
-  
-  }
+  }*/
 
+ /* onBlurAge(){
+    this.myStyle3;
+  }*/
+  onFromSubmit(){
+
+  }
 
 }
