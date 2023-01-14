@@ -4,7 +4,7 @@ import { FormControl,FormBuilder, Validators } from '@angular/forms';
   selector: 'app-focus-blur-event',
   templateUrl: './focus-blur-event.component.html',
   styleUrls: ['./focus-blur-event.component.css']
-});
+})
 export class FocusBlurEventComponent implements OnInit  {
   userForm: any
   myStyle1:any
