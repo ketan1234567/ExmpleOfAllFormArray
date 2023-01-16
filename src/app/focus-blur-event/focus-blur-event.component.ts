@@ -33,19 +33,19 @@ export class FocusBlurEventComponent implements OnInit  {
     }
   }
   onBlurName(){
-    this.myStyle2;
+    this.myStyle2=null;
   }
- /* onFocusAge(){
+ onFocusAge(){
     this.myStyle3={
       'background-color':"#eebd71"
     }
-  }*/
+  }
 
- /* onBlurAge(){
-    this.myStyle3;
-  }*/
+ onBlurAge(){
+    this.myStyle3=null;
+  }
   onFromSubmit(){
-
+  console.log(this.userForm.value)
   }
 
 }

@@ -5,7 +5,7 @@
 	   [ngStyle]="myStyle1"> 
 
 	   <h3>User Form</h3>
-	   <form [formGroup]="userFrom" (ngSubmit)="onFromSubmit()">
+	   <form [formGroup]="userForm" (ngSubmit)="onFromSubmit()">
 		<table>
 			<tr>
 				<td>Name:</td>
@@ -16,9 +16,9 @@
 			</tr>
 			<tr>
 				<td>Age:</td>
-				<!--<td>
+				<td>
 					<input formControlName="age" (focus)="onFocusAge()" (blur)="onBlurAge()" [ngStyle]="myStyle3">
-				</td>-->
+				</td>
 			</tr>
 			<tr>
 				<td colspan="2">

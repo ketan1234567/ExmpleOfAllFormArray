@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormArrayComponent } from './form-array/form-array.component';
 import { DisableAngularFormControlComponent } from './disable-angular-form-control/disable-angular-form-control.component';
 import { FocusBlurEventComponent } from './focus-blur-event/focus-blur-event.component';
+import { AddControlandremoveControlComponent } from './add-controlandremove-control/add-controlandremove-control.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FocusBlurEventComponent } from './focus-blur-event/focus-blur-event.com
     UsersComponent,
     FormArrayComponent,
     DisableAngularFormControlComponent,
-    FocusBlurEventComponent
+    FocusBlurEventComponent,
+    AddControlandremoveControlComponent
   
    
   ],
