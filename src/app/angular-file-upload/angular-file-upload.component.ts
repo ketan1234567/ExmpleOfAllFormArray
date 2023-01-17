@@ -21,6 +21,7 @@ export class AngularFileUploadComponent  {
   }
 
   Upload(files: File[]){
+
     console.log('Uploaded The Single File')
     //const selectedFileList = (<HTMLInputElement>document.getElementById('myFile')).files; 
     const file=files[0];
