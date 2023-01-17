@@ -5,6 +5,7 @@ import { FormArrayComponent } from './form-array/form-array.component';
 import { DisableAngularFormControlComponent } from './disable-angular-form-control/disable-angular-form-control.component';
 import { FocusBlurEventComponent } from './focus-blur-event/focus-blur-event.component';
 import { AddControlandremoveControlComponent } from './add-controlandremove-control/add-controlandremove-control.component';
+import { FileUploadServiceService } from './services/file-upload-service.service';
 
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path:"add-control",
     component:AddControlandremoveControlComponent
+  },
+  {
+    path:"upload-Content",
+    component:FileUploadServiceService
   }
 
 ];
