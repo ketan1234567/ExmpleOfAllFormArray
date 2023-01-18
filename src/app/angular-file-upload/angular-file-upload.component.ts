@@ -15,12 +15,11 @@ export class AngularFileUploadComponent  {
   isSingleUploaded=false;
   isMultipleUploaded=false;
   urlAfterUpload='';
+  urlAfterMultipleUpload='';
   selectedFileList=null;
   percentUploaded=[0];
   errorCode:any
   acceptedExtensions ="jpg, jpeg, bmp, png, wav, mp3, mp4";
-
-
 
   constructor(private fuservices:FileUploadServiceService,private formbuilder:FormBuilder){
 
@@ -58,6 +57,7 @@ export class AngularFileUploadComponent  {
           this.percentUploaded[fileNum] = Math.round(100 * event.loaded / event.total);
         } else if (event instanceof HttpResponse) {
           console.log(file.name + ', Size: ' + file.size + ', Uploaded URL: ' + event.body.link);
+
           this.fileUploadSuccess();
         }
       },
@@ -71,7 +71,6 @@ export class AngularFileUploadComponent  {
     filesToUpload:this.formbuilder.array([
       this.formbuilder.control('',[Validators.required,fileExtensionValidator(this.acceptedExtensions)])
     ])
-
   });
 
   get title() :FormControl{
@@ -117,6 +116,7 @@ export class AngularFileUploadComponent  {
           this.percentUploaded[fileNum] = Math.round(100 * event.loaded / event.total);
         } else if (event instanceof HttpResponse) {
           console.log(file.name + ', Size: ' + file.size + ', Uploaded URL: ' + event.body.link);
+          this.urlAfterMultipleUpload=event.body.link;
           this.fileUploadSuccess();
         }
       },
