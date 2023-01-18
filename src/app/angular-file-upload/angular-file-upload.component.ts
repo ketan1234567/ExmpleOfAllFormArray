@@ -15,7 +15,9 @@ export class AngularFileUploadComponent  {
   isSingleUploaded=false;
   isMultipleUploaded=false;
   urlAfterUpload='';
+  selectedFileList=null;
   percentUploaded=[0];
+  errorCode:any
   acceptedExtensions ="jpg, jpeg, bmp, png, wav, mp3, mp4";
 
 
@@ -89,22 +91,29 @@ export class AngularFileUploadComponent  {
     this.percentUploaded.splice(index,1);
   }
   onFormSubmit(){
-    console.log('---Uploading multiple file---');
     this.isMultipleUploaded = false;
-    for (let i = 0; i < this.filesToUpload.length && this.uploadForm.valid; i++) {
-      const selectedFileList:any = (<HTMLInputElement>document.getElementById('file' + i)).files;
+  if(this.uploadForm.value){
+   this.errorCode="This  is all selected Required";
+  }
+  for (let i = 0; i < this.filesToUpload.length; i++) {
+
+      const selectedFileList:any= (<HTMLInputElement>document.getElementById('file' + i)).files;
       const file = selectedFileList.item(0);
+      
       this.uploadFile1(file, i);
     }
     console.log(this.title.value);
 
+ 
+
   }
+    
   uploadFile1(file: File, fileNum: number) {
     const formData = new FormData();
     formData.append("file", file);
     this.fuservices.UploadWithProgress(formData)
       .subscribe(event => {
-        if (event.type === HttpEventType.UploadProgress) {
+        if (event.type === HttpEventType.UploadProgress ) {
           this.percentUploaded[fileNum] = Math.round(100 * event.loaded / event.total);
         } else if (event instanceof HttpResponse) {
           console.log(file.name + ', Size: ' + file.size + ', Uploaded URL: ' + event.body.link);

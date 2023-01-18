@@ -26,6 +26,10 @@
     <br/>
     <br/>
 </div>
+<div *ngIf="errorCode" class="error"> This is all Fileds is Required
+    <br/>
+    <br/>
+</div>
 <form [formGroup]="uploadForm" (ngSubmit)="onFormSubmit()">
     <table>
         <tr>
@@ -45,6 +49,7 @@
                         select The Files 
 
                     </label>
+            
                     <label *ngIf="filesToUpload.controls[i].errors?.['inValidExt'] && !filesToUpload.controls[i].errors?.['required']" class="error">
 
                     </label>
