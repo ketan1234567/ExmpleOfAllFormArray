@@ -20,3 +20,54 @@
         </td>
     </tr>
 </table>
+<br><br>
+<h3>Multiple Upload with Progress</h3>
+<div *ngIf="isMultipleUploaded" class="success">File Uploaded and Form submitted successfully
+    <br/>
+    <br/>
+</div>
+<form [formGroup]="uploadForm" (ngSubmit)="onFormSubmit()">
+    <table>
+        <tr>
+            <td colspan="2">
+                Title
+                <input formControlName="title">
+                <label *ngIf="title.errors?.['required']" class="error">Title is Required </label> 
+
+            </td>
+        </tr>
+     <div formArrayName="filesToUpload">
+        <div *ngFor="let f of filesToUpload.controls; index as i">
+            <tr>
+                <td>
+                    <input [formControlName]="i" type="file" id="file{{i}}" >
+                    <label *ngIf="filesToUpload.controls[i].errors?.['required']" class="error">
+                        select The Files 
+
+                    </label>
+                    <label *ngIf="filesToUpload.controls[i].errors?.['inValidExt'] && !filesToUpload.controls[i].errors?.['required']" class="error">
+
+                    </label>
+                </td>
+                <td>
+                    {{ percentUploaded[i] }}%
+                </td>
+                <td>
+                    <button type="button" (click)="deleteFile(i)">Delete</button>
+                </td>
+            </tr>
+
+        </div>
+
+     </div>
+     <tr>
+        <td colspan="3">
+            <button type="submit">submit</button>
+            <button  type="button" (click)="addMoreFiles()">Add More Files</button>
+            <button  type="button" (click)="formReset()">formReset</button>
+
+
+        </td>
+     </tr>
+    </table>
+</form>
