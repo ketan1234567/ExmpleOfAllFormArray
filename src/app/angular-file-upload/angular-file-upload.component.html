@@ -29,7 +29,7 @@
 <form [formGroup]="uploadForm" (ngSubmit)="onFormSubmit()">
     <table>
         <tr>
-            <td colspan="2">
+            <td colspan="3">
                 Title
                 <input formControlName="title">
                 <label *ngIf="title.errors?.['required']" class="error">Title is Required </label> 
