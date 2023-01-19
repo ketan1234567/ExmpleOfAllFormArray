@@ -11,6 +11,7 @@ import { FocusBlurEventComponent } from './focus-blur-event/focus-blur-event.com
 import { AddControlandremoveControlComponent } from './add-controlandremove-control/add-controlandremove-control.component';
 import { AngularFileUploadComponent } from './angular-file-upload/angular-file-upload.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ReactiveOptionsSelectedDynamicallyComponent } from './reactive-options-selected-dynamically/reactive-options-selected-dynamically.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     DisableAngularFormControlComponent,
     FocusBlurEventComponent,
     AddControlandremoveControlComponent,
-    AngularFileUploadComponent
+    AngularFileUploadComponent,
+    ReactiveOptionsSelectedDynamicallyComponent
   
    
   ],
