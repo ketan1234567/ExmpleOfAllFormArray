@@ -15,8 +15,8 @@ import { UserService } from '../services/user.service';
 })
 export class ReactiveOptionsSelectedDynamicallyComponent implements OnInit {
   isValidFormSubmitted = false;
-	allProfiles:any[]= Profile[];
-	allTechnologies:any[]=Technology[];
+	allProfiles:Profile[]=[];
+	allTechnologies:Technology[]=[];
 	userForm:any= FormGroup;
 
   constructor(private formbuilder:FormBuilder,private userServices:UserService){
@@ -54,13 +54,28 @@ export class ReactiveOptionsSelectedDynamicallyComponent implements OnInit {
     this.userForm.setValue(user);
 
   }
-  onFormSubmit(){
+  onProfileChange() {
+		let profile: Profile = this.profile.value;
+		console.log('Profile Changed: ' + profile.prName);
+	}
+	compareTech(t1: Technology, t2: Technology): boolean {
+		console.log(t1.techId + '-' + t2.techId);
+		return t1 && t2 ? t1.techId === t2.techId : t1 === t2;
+	}
+  onFormSubmit() {
+		this.isValidFormSubmitted = false;
+		if (this.userForm.valid) {
+			this.isValidFormSubmitted = true;
+		} else {
+			return;
+		}
+		let newUser: User = this.userForm.value;
+		this.userServices.createUser(newUser);
+		this.resetForm(this.userForm);
+	}
 
-  }
-  onProfileChange(){
-
-  }
-  resetForm(){
+  resetForm(form: FormGroup){
+    form.reset();
 
   }
 

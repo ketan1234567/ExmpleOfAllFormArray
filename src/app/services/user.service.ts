@@ -30,7 +30,7 @@ export class UserService {
   ]
   return technologies;
   }
-  createUser(user: User) {
+  createUser(user:any=User) {
     //Log user data in console
     console.log("User Name: " + user.userName);
     console.log("Profile Id: " + user.profile.prId);

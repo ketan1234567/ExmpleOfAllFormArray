@@ -7,6 +7,7 @@ import { FocusBlurEventComponent } from './focus-blur-event/focus-blur-event.com
 import { AddControlandremoveControlComponent } from './add-controlandremove-control/add-controlandremove-control.component';
 import { FileUploadServiceService } from './services/file-upload-service.service';
 import { AngularFileUploadComponent } from './angular-file-upload/angular-file-upload.component';
+import { ReactiveOptionsSelectedDynamicallyComponent } from './reactive-options-selected-dynamically/reactive-options-selected-dynamically.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path:"upload-Content",
     component:AngularFileUploadComponent
+  },
+  {
+    path:"ReactiveOptions",
+    component:ReactiveOptionsSelectedDynamicallyComponent
   }
 
 ];
