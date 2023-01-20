@@ -1,0 +1,19 @@
+<h1>value-changes-status-changes works!</h1>
+<h3>User Form</h3>
+<form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+    <table>
+        <tr>
+            <td>UserName *</td>
+            <td>
+                <input formControlName="username">
+                <div *ngIf="username.dirty && username.errors" class="error">
+                    <div *ngIf="username.errors.req">
+
+                    </div>
+ 
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+</form>
