@@ -8,6 +8,7 @@ import { AddControlandremoveControlComponent } from './add-controlandremove-cont
 import { FileUploadServiceService } from './services/file-upload-service.service';
 import { AngularFileUploadComponent } from './angular-file-upload/angular-file-upload.component';
 import { ReactiveOptionsSelectedDynamicallyComponent } from './reactive-options-selected-dynamically/reactive-options-selected-dynamically.component';
+import { ValueChangesStatusChangesComponent } from './value-changes-status-changes/value-changes-status-changes.component';
 
 
 const routes: Routes = [
@@ -38,7 +39,12 @@ const routes: Routes = [
   {
     path:"ReactiveOptions",
     component:ReactiveOptionsSelectedDynamicallyComponent
+  },
+  {
+    path:"ValueChanges",
+    component:ValueChangesStatusChangesComponent
   }
+
 
 ];
 
