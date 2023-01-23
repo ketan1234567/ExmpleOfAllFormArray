@@ -18,6 +18,9 @@ import { confirmPasswordValidator } from '../custom-validators.ts/confirm-passwo
 })
 export class ValueChangesStatusChangesComponent implements OnInit {
   userForm:any= FormGroup; 
+  hidenotification:any;
+  
+
   constructor(private formBuilder:FormBuilder) {
   }
   ngOnInit() {
@@ -80,13 +83,21 @@ export class ValueChangesStatusChangesComponent implements OnInit {
         console.log('NotificationMode Mode:'+ mode);
         if (mode==='email') {
            this.email.setValidators([Validators.required, Validators.email]);
+           this.hidenotification=mode;
+           console.log(     this.hidenotification=mode)
+       
            this.mobileNumber.clearValidators();
+  
         } else if (mode === 'mobile') {
            this.mobileNumber.setValidators([Validators.required]);
+           this.hidenotification=mode;
+         
            this.email.clearValidators();
         } else if (mode==='both') {
+          this.hidenotification=mode;
           this.email.setValidators([Validators.required, Validators.email]);
-          this.mobileNumber.setValidators([Validators.required]);          
+          this.mobileNumber.setValidators([Validators.required]);   
+
         }
         this.email.updateValueAndValidity();
         this.mobileNumber.updateValueAndValidity();
@@ -123,6 +134,7 @@ export class ValueChangesStatusChangesComponent implements OnInit {
     return this.userForm.get('mobileNumber');
   }   
   get notificationMode() {
+    
     return this.userForm.get('notificationMode');
   }      
   get favoriteLocations() {

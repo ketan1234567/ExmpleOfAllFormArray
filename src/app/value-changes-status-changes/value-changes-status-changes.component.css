@@ -10,3 +10,6 @@ table, th, td {
 .success {
     color: green;
 } 
+.hide{
+    display: none;
+}
