@@ -13,6 +13,7 @@ import { AngularFileUploadComponent } from './angular-file-upload/angular-file-u
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveOptionsSelectedDynamicallyComponent } from './reactive-options-selected-dynamically/reactive-options-selected-dynamically.component';
 import { ValueChangesStatusChangesComponent } from './value-changes-status-changes/value-changes-status-changes.component';
+import { FormBuilderComponent } from './form-builder/form-builder.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ValueChangesStatusChangesComponent } from './value-changes-status-chang
     AngularFileUploadComponent,
     ReactiveOptionsSelectedDynamicallyComponent,
     ValueChangesStatusChangesComponent,
+    FormBuilderComponent,
   
   
   
@@ -35,7 +37,8 @@ import { ValueChangesStatusChangesComponent } from './value-changes-status-chang
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
 
     
 
