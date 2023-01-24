@@ -15,6 +15,12 @@ export class FormBuilderComponent implements OnInit {
      teamForm={} as FormGroup;
      formSumitted=false;
      allSkills=of([]as any)
+	 flag =true;
+	 isReq=true;
+	 result=40;
+	 website={
+		name:'ketan'
+	 }	
 
      constructor(private formbuilder:FormBuilder,private teamMngservices:TeamManagementService){
 

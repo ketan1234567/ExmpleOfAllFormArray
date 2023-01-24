@@ -15,10 +15,10 @@
 
         
          <b>Department</b>
+         <p [textContent]="website.name"> </p>
          <div formGroupNames="teamDept" class="department">
             <p>Department Head : <input formControlName="deptHead"></p>
             <p>Department Name : <input formControlName="deptName"></p>
-
          </div>
          <div class="all-emp">
             <b>Employee In team</b><br><br><br>
@@ -43,8 +43,14 @@
 
          </div>
          <button [disabled]="teamForm.invalid">SUBMIT</button>
+
+
         </form>
+ 
+     
 
 </div>
+<div  [class.required]="isReq">hello ketan</div>
 
+<p [style.color]="result > 30 ? 'blue' : 'green'">Hello color world</p>
 
