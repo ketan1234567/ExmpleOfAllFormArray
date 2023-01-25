@@ -14,6 +14,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveOptionsSelectedDynamicallyComponent } from './reactive-options-selected-dynamically/reactive-options-selected-dynamically.component';
 import { ValueChangesStatusChangesComponent } from './value-changes-status-changes/value-changes-status-changes.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
+import { FormGroupComponent } from './form-group/form-group.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { FormBuilderComponent } from './form-builder/form-builder.component';
     ReactiveOptionsSelectedDynamicallyComponent,
     ValueChangesStatusChangesComponent,
     FormBuilderComponent,
+    FormGroupComponent,
   
   
   

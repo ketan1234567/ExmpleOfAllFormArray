@@ -10,6 +10,7 @@ import { AngularFileUploadComponent } from './angular-file-upload/angular-file-u
 import { ReactiveOptionsSelectedDynamicallyComponent } from './reactive-options-selected-dynamically/reactive-options-selected-dynamically.component';
 import { ValueChangesStatusChangesComponent } from './value-changes-status-changes/value-changes-status-changes.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
+import { FormGroupComponent } from './form-group/form-group.component';
 
 
 const routes: Routes = [
@@ -48,6 +49,10 @@ const routes: Routes = [
   {
     path:"formBuilder",
     component:FormBuilderComponent
+  },
+  {
+    path:"formArray",
+    component:FormGroupComponent
   }
 
 

@@ -1,0 +1,27 @@
+<h1>form-group works!</h1>
+<div *ngIf="userForm.invalid && !formSubmitted" [ngClass]="'error'">Form not Valid</div>
+<div *ngIf="formSubmitted"[ngClass]="'success'"> Form Submitted successfully.</div>
+<form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+    <div>
+        Name:<input formControlName="name">
+        <br>
+        <label *ngIf="name.invalid" [ngClass]="'error'">Name is Required 10 Max Characetor</label>
+    </div>
+    <br>
+    <div formArrayName="users">
+        <div *ngFor="let user of users.controls; index as idx">
+            <br>
+            <input [formControlName]="idx" placeholder="Enter User Name">
+            <br><br>
+            <button type="button" (click)="deleteUserField(idx)">Delete</button>
+            <br>
+
+        </div>
+        <br><br>
+
+    </div>
+    <button type="button" (click)="AddUserField()">AddUserField</button>
+    <button type="submit">submit</button>
+    <br>
+    <button type="button" (click) = "setDefaultValue()">Set Defaults</button>
+</form>
