@@ -15,6 +15,7 @@ import { ReactiveOptionsSelectedDynamicallyComponent } from './reactive-options-
 import { ValueChangesStatusChangesComponent } from './value-changes-status-changes/value-changes-status-changes.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { FormGroupComponent } from './form-group/form-group.component';
+import { FormControlAllComponent } from './form-control-all/form-control-all.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { FormGroupComponent } from './form-group/form-group.component';
     ValueChangesStatusChangesComponent,
     FormBuilderComponent,
     FormGroupComponent,
+    FormControlAllComponent,
   
   
   

@@ -1,0 +1,62 @@
+<h1>Using Form Controls works!</h1>
+<div>
+    <div>
+        Name:<input [formControl]="name">
+        <label *ngIf="name.invalid" [ngClass]="'error'">Name Required with 15 max character</label>
+    </div>
+    <div>
+        <button (click)="setNameValue()">setName Value</button>
+        <button (click)="setResetName()"> Reset</button>
+
+    </div>
+    <div>
+        Age:<input [formControl]="age" >
+    </div>
+    <div>
+        city:<input [formControl]="city" >
+    </div>
+    <div>
+        Country:<input [formControl]="country" >
+    </div>
+    <div>
+        <input type="checkbox" [checked]="married.value" (change)="changeValue()"/>
+        Are You Married
+    </div>
+</div>
+<div>
+    <p>Name:<b>{{name.value}}</b>,Validations Status:<b>{{name.status}}</b></p>
+    <p>age:<b>{{age.value}}</b>,Validations Status:<b>{{age.status}}</b></p>
+    <p>city:<b>{{city.value}}</b></p>
+    <p>country:<b>{{country.value}}</b></p>
+    <p>Married:<b>{{married.value}}</b></p>
+
+
+
+
+</div>
+<h1>Form Control with FormGroup</h1>
+<div>
+    <form [formGroup]="userForm" (ngSubmit)="onFormSubmit()" >
+        Name:<input formControlName="name" placeholder="Enter Your Name"><br>
+         age:<input formControlName="age" placeholder="Enter Your age"><br>
+        city:<input formControlName="city" placeholder="Enter Your city"><br>
+        country:<input formControlName="country" placeholder="Enter Your country"><br>
+        <button type="submit">submit</button>
+        <button type="submit" (click)="resetForm()">Reset</button>
+       <!----<button type="button" (click)="setDefaultValue()">setDefaultValue</button>-->
+
+
+        <div formArrayName="users">
+            <div *ngFor="let user of users.controls; index as idx">
+                <input [formControlName]="idx" placeholder="Enter user Name">
+                <button (click)="deleteUserField(idx)">Delete</button>
+
+            </div>
+
+        </div>
+ 
+        <button type="submit">submit</button>
+        <button type="button" (click)="AddUserField()">Add more User</button>
+    </form>
+</div>
+
