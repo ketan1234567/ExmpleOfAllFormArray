@@ -54,9 +54,20 @@
             </div>
 
         </div>
+        <div [class.required]="isReq">Hello Wordl!</div>
+        <p [style.color]="result > 10 ?'blue':'green'">Hello color</p>
  
         <button type="submit">submit</button>
         <button type="button" (click)="AddUserField()">Add more User</button>
     </form>
 </div>
+<table [border]="bdr" [attr.height]="h" [attr.width]="w">
+    <tr>
+        <td [attr.colspan]="clspan">A+B</td>
+    </tr>
+    <tr>
+        <td>c</td>
+        <td>D</td>
 
+    </tr>
+</table>

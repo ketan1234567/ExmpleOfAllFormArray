@@ -7,6 +7,13 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./form-control-all.component.css']
 })
 export class FormControlAllComponent {
+ clspan=2;
+ h = 300;
+ w = 200;
+ bdr = 5;
+
+  isReq=false;
+  result=5;
   name=new FormControl('',[Validators.required,Validators.minLength(15)])
   age=new FormControl(20,[Validators.required]);
   city=new FormControl();
